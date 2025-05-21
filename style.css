@@ -1,0 +1,227 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #005f73;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  header img {
+    width: 100px;
+    height: 100px;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-grow: 1;
+  }
+  header button {
+    background: #0a9396;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  header button:hover {
+    background: #94d2bd;
+    color: #005f73;
+  }
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: #ee9b00;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease;
+  }
+  nav button:hover,
+  nav button.active {
+    background: #ca6702;
+  }
+  section {
+    display: none;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  section.active {
+    display: block;
+  }
+  h2 {
+    color: #005f73;
+    margin-top: 0;
+    border-bottom: 3px solid #0a9396;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  form {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  form input, form select, form button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  form input:focus, form select:focus {
+    outline-color: #0a9396;
+    border-color: #0a9396;
+  }
+  form button {
+    background: #005f73;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+  }
+  form button:hover {
+    background: #0a9396;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.7rem;
+    text-align: left;
+  }
+  th {
+    background: #ee9b00;
+    color: white;
+  }
+  tbody tr:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+  }
+  ul.list {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul.list li {
+    background: #f1faee;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-left: 5px solid #0a9396;
+  }
+  .disease {
+    background: #e0fbfc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 6px solid #005f73;
+  }
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+    form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    form input, form select, form button {
+      width: 100%;
+    }
+  }
+  /* Dashboard styles */
+  #dashboard {
+    background: #fefefe;
+    border: 2px solid #0a9396;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(10,147,150,0.15);
+    text-align: center;
+  }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .stat {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0a9396;
+    background: #94d2bd;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    min-width: 180px;
+  }
+  .dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+  }
+  .dark-mode header {
+    background-color: #222;
+    color: #eee;
+  }
+  .dark-mode nav button {
+    background: #444;
+    color: #eee;
+  }
+  .dark-mode nav button.active,
+  .dark-mode nav button:hover {
+    background: #888;
+    color: #222;
+  }
+  .dark-mode section {
+    background: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+  }
+  .dark-mode form input,
+  .dark-mode form select {
+    background: #333;
+    border-color: #555;
+    color: #eee;
+  }
+  .dark-mode form button {
+    background: #444;
+    color: #eee;
+  }
+  .dark-mode table,
+  .dark-mode th,
+  .dark-mode td {
+    border-color: #555;
+  }
+  .dark-mode th {
+    background: #333;
+  }
