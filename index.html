@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ADI MedPortal+</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo (2).jfif" alt="ADI MedPortal Logo" />
+    <h1>ADI MedPortal+</h1>
+    <button id="toggleDarkMode">Toggle Dark Mode</button>
+  </header>
+
+  <nav>
+    <button class="active" onclick="showSection('dashboard'); this.classList.add('active'); Array.from(this.parentNode.children).filter(b=>b!==this).forEach(b=>b.classList.remove('active'));">Dashboard</button>
+    <button onclick="showSection('patients'); this.classList.add('active'); Array.from(this.parentNode.children).filter(b=>b!==this).forEach(b=>b.classList.remove('active'));">Patients</button>
+    <button onclick="showSection('medications'); this.classList.add('active'); Array.from(this.parentNode.children).filter(b=>b!==this).forEach(b=>b.classList.remove('active'));">Medications</button>
+    <button onclick="showSection('diseases'); this.classList.add('active'); Array.from(this.parentNode.children).filter(b=>b!==this).forEach(b=>b.classList.remove('active'));">Diseases</button>
+  </nav>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard" class="active">
+      <h2>📊 Live Dashboard</h2>
+      <div class="stats">
+        <div class="stat">Patients Admitted <span id="totalPatients">0</span></div>
+        <div class="stat">Surgeries Ongoing <span id="ongoingSurgeries">0</span></div>
+        <div class="stat">Active Medications <span id="activeMeds">0</span></div>
+      </div>
+    </section>
+
+    <!-- Patients Section -->
+    <section id="patients">
+      <h2>👩‍⚕️ Patient Information</h2>
+      <form id="patientForm">
+        <input type="text" id="pName" placeholder="Name" required />
+        <input type="number" id="pAge" placeholder="Age" required min="0" />
+        <input type="text" id="pCondition" placeholder="Condition" required />
+        <input type="text" id="pRoom" placeholder="Room No." required />
+        <select id="pSurgeryStatus" required>
+          <option value="None">Surgery Status: None</option>
+          <option value="Ongoing">Surgery Status: Ongoing</option>
+          <option value="Completed">Surgery Status: Completed</option>
+        </select>
+        <input type="text" id="pStatus" placeholder="General Status" required />
+        <button type="submit">Add Patient</button>
+      </form>
+      <table id="patientTable">
+        <thead>
+          <tr><th>Name</th><th>Age</th><th>Condition</th><th>Room</th><th>Surgery Status</th><th>Status</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="medicationsForPatient" style="margin-top: 1rem;"></div>
+    </section>
+
+    <!-- Medications Section -->
+    <section id="medications">
+      <h2>💊 Medications List</h2>
+      <form id="medForm">
+        <select id="mPatient" required></select>
+        <input type="text" id="mDrug" placeholder="Medicine" required />
+        <input type="text" id="mDose" placeholder="Dosage" required />
+        <button type="submit">Add Medication</button>
+      </form>
+      <ul id="medList" class="list"></ul>
+    </section>
+
+    <!-- Diseases Section -->
+    <section id="diseases">
+      <h2>🧠 Disease Knowledgebase</h2>
+      <input type="text" id="diseaseSearch" placeholder="Search Disease..." />
+      <div id="diseaseResults"></div>
+
+      <h3>Add New Disease</h3>
+      <form id="diseaseForm">
+        <input type="text" id="dName" placeholder="Disease Name" required />
+        <input type="text" id="dSymptoms" placeholder="Symptoms" required />
+        <input type="text" id="dTreatment" placeholder="Treatment" required />
+        <button type="submit">Add Disease</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
